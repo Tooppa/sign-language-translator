@@ -7,6 +7,10 @@ import {
   Link
 } from "react-router-dom";
 
+import TranslationPage from './views/TranslationPage';
+import ProfilePage from "./views/ProfilePage";
+import HomePage from "./views/HomePage";
+
 export default function App() {
   return (
     <Router>
@@ -28,23 +32,11 @@ export default function App() {
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Routes>
-          <Route path="/translation" element={<Translation />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/" element={<Home />} />
+          <Route path="/translation" element={<TranslationPage />} />
+          <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/" element={<HomePage />} />
         </Routes>
       </div>
     </Router>
   );
-}
-
-function Home() {
-  return <h2>Home</h2>;
-}
-
-function Translation() {
-  return <h2>Translation</h2>;
-}
-
-function Profile() {
-  return <h2>Profile</h2>;
 }
