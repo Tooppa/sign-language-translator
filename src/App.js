@@ -42,9 +42,9 @@ function Home() {
 }
 
 function Translation() {
-  return <h2>About</h2>;
+  return <h2>Translation</h2>;
 }
 
 function Profile() {
-  return <h2>Users</h2>;
+  return <h2>Profile</h2>;
 }
