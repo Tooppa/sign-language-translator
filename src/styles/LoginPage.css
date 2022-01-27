@@ -9,6 +9,8 @@ form{
 }
 input{
     border: none;
+    width: 60vw;
+    background-color: #EFEFEF;
 }
 button{
     border-radius: 20px;
@@ -21,15 +23,23 @@ button{
     margin: 20px;
     border: 1px solid black;
     border-radius: 20px;
+    background-color: #EFEFEF;
 
 }
 .formBg{
     box-shadow: 4px 4px 10px;
     border: 1px solid black;
     border-radius: 10px;
+    background-color: white;
+}
+
+.main{
+    background-color: #FFC75F;
 }
 
 img{
     height: 200px;
     object-fit: contain;
+    margin: 10px;
+    margin-bottom: 30px;
 }
