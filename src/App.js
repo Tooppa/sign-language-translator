@@ -8,7 +8,7 @@ import {
 
 import TranslationPage from './views/TranslationPage';
 import ProfilePage from "./views/ProfilePage";
-import HomePage from "./views/HomePage";
+import HomePage from "./views/LoginPage";
 import Header from "./components/Header"
 
 export default function App() {

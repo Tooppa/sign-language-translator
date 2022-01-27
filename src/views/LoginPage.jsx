@@ -9,7 +9,12 @@ export default function HomePage() {
       </div>
     </div>
     <form action="">
-      <input type="text" />
+      <div className='formBg'>
+        <div className='inputField'>
+          <input type="text" placeholder='What is your name?' />
+          <button className='color-bg-purple' type='submit'>-{'>'}</button>
+        </div>
+      </div>
     </form>
   </div>;
 }
