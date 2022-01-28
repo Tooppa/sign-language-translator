@@ -1,0 +1,16 @@
+.translateField{
+    padding: 5px;
+    margin: 30px;
+    border: 1px solid black;
+    border-radius: 20px;
+    background-color: #EFEFEF;
+}
+.textArea{
+    display: flex;
+    justify-content: center;
+    padding: 60px;
+}
+.text{
+    width: 60vw;
+    height: 300px;
+}

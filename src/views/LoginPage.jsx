@@ -1,6 +1,6 @@
 import '../styles/LoginPage.css';
 export default function HomePage() {
-  return <div className="main">
+  return <div className="color-bg-yellow">
     <div className="horizontal">
       <img src="./assets/Logo-Hello.png" alt="Hello" />
       <div className='vertical'>
