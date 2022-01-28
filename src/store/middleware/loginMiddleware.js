@@ -23,7 +23,7 @@ export const loginMiddleware =
 
         const foundUsers = await createOrFindUser(action.payload);
         // When we have created or found an foundUsers
-        if (foundUsers.length > 0 && foundUsers[0] !== undefined) {
+        if (foundUsers) {
           //  Dispatch it to our requesting component via the reducer
           // Always the take first index from found users
           // Backend returns all users matching the username variable EXACTLY.
