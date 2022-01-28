@@ -14,6 +14,7 @@ export default function HomePage() {
           <input type="text" placeholder='What is your name?' />
           <button className='color-bg-purple' type='submit'>-{'>'}</button>
         </div>
+        <div className='line' />
       </div>
     </form>
   </div>;
