@@ -1,9 +1,11 @@
 import { createOrFindUser } from "../../endpoints/users";
 import {
   ACTION_LOGIN_ATTEMPT,
+  ACTION_LOGIN_SUCCESS,
   loginErrorAction,
   loginSuccessAction,
 } from "../actions/loginActions";
+import { sessionSetAction } from "../actions/sessionActions";
 
 export const loginMiddleware =
   ({ dispatch }) =>
@@ -26,7 +28,7 @@ export const loginMiddleware =
           // Always the take first index from found users
           // Backend returns all users matching the username variable EXACTLY.
           // This shouldn't be an issue since only one user per username is allowed
-          dispatch(loginSuccessAction(foundUsers[0]));
+            dispatch(loginSuccessAction(foundUsers[0]));
         } else {
           console.error(`User not found with ${action.payload}`);
         }
@@ -34,4 +36,7 @@ export const loginMiddleware =
         dispatch(loginErrorAction(error));
       }
     }
+    else if (action.type === ACTION_LOGIN_SUCCESS) {
+        dispatch(sessionSetAction(action.payload));
+      }
   };
