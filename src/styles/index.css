@@ -1,0 +1,61 @@
+body {
+  margin: 0;
+  font-family: 'Sanchez', serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+.line{
+  background-color : #845EC2;
+  width: 100%;
+  height: 20px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-bottom: 1px solid black;
+}
+
+input{
+  border: none;
+  width: 50vw;
+  height: 50px;
+  border-radius: 50px;
+  background-color: #EFEFEF;
+  font-size:larger;
+  text-align: center;
+  margin: 3px
+}
+
+button{
+  border-radius: 50px;
+  border: none;
+  width: 50px;
+  height: 50px;
+  margin: 3px;
+}
+
+
+/* Commonly used styles */
+.heading {
+  font-family: 'Love Ya Like A Sister', cursive;
+}
+
+.color-bg-yellow {
+  background-color : #FFC75F;
+}
+
+.color-bg-yellow-dark {
+  background-color : #E7B355;
+}
+
+.color-bg-purple {
+  background-color : #845EC2;
+}
+
+.color-text-light-grey {
+  background-color: #EFEFEF;
+}
+
+.color-text-grey {
+  background-color: #969696;
+}
