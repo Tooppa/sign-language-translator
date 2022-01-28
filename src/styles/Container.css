@@ -1,0 +1,14 @@
+
+.textArea{
+    display: flex;
+    justify-content: center;
+    padding: 60px;
+}
+.text{
+    width: 55vw;
+    height: 300px;
+    margin: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}

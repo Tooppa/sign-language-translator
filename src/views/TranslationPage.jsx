@@ -1,6 +1,7 @@
 import '../styles/TranslationPage.css';
 import React, { useState } from 'react';
 import { translateToSignLanguage } from '../services/translationEngine.js'
+import Container from '../components/Container';
 
 export default function TranslationPage() {
   const [text, setText] = useState('');
@@ -31,13 +32,8 @@ export default function TranslationPage() {
         </div>
       </form>
     </div>
-    <div className='textArea'>
-      <div className='formBg'>
-        <div className='text'>
-          <Signs />
-        </div>
-        <div className='line' />
-      </div>
-    </div>
+    <Container>
+      <Signs/>
+    </Container>
   </>;
 }
