@@ -5,7 +5,7 @@ export default function ProfilePage() {
   return <>
     <div className="color-bg-yellow">
       <div className="horizontal">
-        <img className='logo' src="./assets/Logo.png" alt="Hello" />
+        <img className='robot' src="./assets/Logo.png" alt="Hello" />
         <div className='vertical'>
           <h1>Username: user</h1>
           <button className='logout'>
@@ -15,8 +15,36 @@ export default function ProfilePage() {
       </div>
     </div>
     <Container>
-      <h1>Translations</h1>
-
+      <div className='info'>
+        <h1 >Translations</h1>
+        <button className='clear'>
+          <h2>Clear Translations</h2>
+        </button>
+      </div>
+      <ul className='translationList'>
+        <li>test</li>
+        <li>test</li>
+        <li>test</li>
+        <li>test</li>
+        <li>test</li>
+        <li>test</li>
+        <li>test</li>
+        <li>test</li>
+        <li>test</li>
+        <li>test</li>
+        <li>test</li>
+        <li>test</li>
+        <li>test</li>
+        <li>test</li>
+        <li>test</li>
+        <li>test</li>
+        <li>test</li>
+        <li>test</li>
+        <li>test</li>
+        <li>test</li>
+        <li>test</li>
+        <li>test</li>
+      </ul>
     </Container>
   </>;
 }

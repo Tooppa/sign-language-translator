@@ -4,3 +4,26 @@
     border-radius: 10px;
     background-color:lightcoral;
 }
+.info{
+    width: 35%;
+    padding-left: 40px;
+}
+.clear{
+    width: 200px;
+    height: 60px;
+    border-radius: 10px;
+    background-color:lightcoral;
+}
+.translationList{
+    width: 45%;
+    margin: 20px;
+    overflow:hidden; 
+    overflow-y:scroll;
+    height: 70%;
+}
+.robot{
+    height: 150px;
+    object-fit: contain;
+    margin: 20px;
+    margin-bottom: 30px;
+}
