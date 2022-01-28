@@ -1,0 +1,24 @@
+.translateField{
+    padding: 5px;
+    margin: 30px;
+    border: 1px solid black;
+    border-radius: 60px;
+    background-color: #EFEFEF;
+}
+.textArea{
+    display: flex;
+    justify-content: center;
+    padding: 60px;
+}
+.text{
+    width: 55vw;
+    height: 300px;
+    margin: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.signs{
+    height: 80px;
+    object-fit: contain;
+}

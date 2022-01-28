@@ -12,17 +12,6 @@ form{
     display: flex;
     justify-content: center;
 }
-input{
-    border: none;
-    width: 60vw;
-    background-color: #EFEFEF;
-}
-button{
-    border-radius: 20px;
-    border: none;
-    width: 30px;
-    height: 30px;
-}
 .inputField{
     padding: 5px;
     margin: 20px;
@@ -38,11 +27,7 @@ button{
     background-color: white;
 }
 
-.main{
-    background-color: #FFC75F;
-}
-
-img{
+.logo{
     height: 200px;
     object-fit: contain;
     margin: 20px;
