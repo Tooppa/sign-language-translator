@@ -1,7 +1,9 @@
+import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { loginAttemptAction } from "../store/actions/loginActions";
+import { sessionInitAction } from "../store/actions/sessionActions";
 import "../styles/LoginPage.css";
 
 export default function HomePage() {
@@ -12,11 +14,18 @@ export default function HomePage() {
   const nameSubmitted = (ev) => {
     ev.preventDefault();
 
-    if (!session.isLoggedIn) {
-      dispatch(loginAttemptAction(ev.target.username.value));
+    dispatch(loginAttemptAction(ev.target.username.value));
+  };
+
+  useEffect(() => {
+    dispatch(sessionInitAction());
+  }, []);
+
+  useEffect(() => {
+    if (session.isLoggedIn) {
       navigate("/translation");
     }
-  };
+  }, [session]);
 
   return (
     <div className="color-bg-yellow">
@@ -30,7 +39,11 @@ export default function HomePage() {
       <form onSubmit={nameSubmitted}>
         <div className="formBg">
           <div className="inputField">
-            <input type="text" placeholder="What is your name?" name="username"/>
+            <input
+              type="text"
+              placeholder="What is your name?"
+              name="username"
+            />
             <button className="color-bg-purple" type="submit">
               -{">"}
             </button>
