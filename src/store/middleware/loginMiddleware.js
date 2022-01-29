@@ -21,14 +21,14 @@ export const loginMiddleware =
           return;
         }
 
-        const foundUsers = await createOrFindUser(action.payload);
+        const foundUser = await createOrFindUser(action.payload);
         // When we have created or found an foundUsers
-        if (foundUsers) {
+        if (foundUser) {
           //  Dispatch it to our requesting component via the reducer
           // Always the take first index from found users
           // Backend returns all users matching the username variable EXACTLY.
           // This shouldn't be an issue since only one user per username is allowed
-            dispatch(loginSuccessAction(foundUsers[0]));
+          dispatch(loginSuccessAction(foundUser));
         } else {
           console.error(`User not found with ${action.payload}`);
         }
