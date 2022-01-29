@@ -52,6 +52,8 @@ button{
   flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 .vertical{
   display: flex;
