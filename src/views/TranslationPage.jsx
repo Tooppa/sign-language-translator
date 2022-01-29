@@ -34,14 +34,16 @@ export default function TranslationPage() {
   return <>
     <div className="color-bg-yellow">
       <form onSubmit={handleSubmit}>
-        <div className='translateField'>
+        <div className='translateField horizontal'>
           <input
             type="text"
             placeholder='Type here to translate'
             value={text}
             onChange={e => setText(e.target.value)}
           />
-          <button className='color-bg-purple' type='submit'>-{'>'}</button>
+          <button className='color-bg-purple' type='submit'>
+            <img id="arrow" src="./assets/arrow-icon-1177.png" alt="->" />
+          </button>
         </div>
       </form>
     </div>

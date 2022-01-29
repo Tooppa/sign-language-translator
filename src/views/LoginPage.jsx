@@ -38,14 +38,14 @@ export default function HomePage() {
       </div>
       <form onSubmit={nameSubmitted}>
         <div className="formBg">
-          <div className="inputField">
+          <div className="inputField horizontal">
             <input
               type="text"
               placeholder="What is your name?"
               name="username"
             />
             <button className="color-bg-purple" type="submit">
-              -{">"}
+              <img id="arrow" src="./assets/arrow-icon-1177.png" alt="->" />
             </button>
           </div>
           <div className="line" />

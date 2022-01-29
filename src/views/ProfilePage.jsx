@@ -1,9 +1,22 @@
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { useNavigate } from "react-router-dom";
+import { sessionLogoutAction } from '../store/actions/sessionActions';
 import Container from '../components/Container';
 import '../styles/ProfilePage.css';
 
 export default function ProfilePage() {
   const session = useSelector((state) => state.session);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  
+  useEffect(() => {
+    if (!session.isLoggedIn) {
+      console.log('user not logged in redirecting back main');
+      navigate('/');
+    }
+  }, []);
 
   const Translations = () => {
     if (session.user.translations) {
@@ -19,7 +32,8 @@ export default function ProfilePage() {
   }
 
   const logout = () => {
-
+    dispatch(sessionLogoutAction());
+    navigate('/')
   }
   const clearTranslations = () => {
 
