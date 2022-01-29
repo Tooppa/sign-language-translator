@@ -64,18 +64,25 @@ export const createOrFindUser = async (username) => {
  * @param {number} newHighScore
  * @returns Updated user
  */
-export const addTranslations = async (userId, newTranslations) => {
+export const addTranslation = async (username, newTranslation) => {
   try {
-    const res = await fetch(`${baseUrl}/${userId}`, {
+    let user = await getUser(username);
+    if (!user) {
+      console.error(`Did not find user with username ${username}`);
+      return;
+    }
+
+    const res = await fetch(`${baseUrl}/${user.id}`, {
       method: "PATCH",
       headers: {
         "X-API-Key": apiKey,
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        translations: newTranslations,
+        translations: [...user.translations, newTranslation],
       }),
     });
+
     const json = await res.json();
     return json;
   } catch (error) {
