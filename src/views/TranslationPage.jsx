@@ -1,6 +1,7 @@
 import '../styles/TranslationPage.css';
 import React, { useEffect, useState } from 'react';
 import { translateToSignLanguage } from '../services/translationEngine.js'
+import Container from '../components/Container';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
@@ -44,13 +45,8 @@ export default function TranslationPage() {
         </div>
       </form>
     </div>
-    <div className='textArea'>
-      <div className='formBg'>
-        <div className='text'>
-          <Signs />
-        </div>
-        <div className='line' />
-      </div>
-    </div>
+    <Container>
+      <Signs/>
+    </Container>
   </>;
 }

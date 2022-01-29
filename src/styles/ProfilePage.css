@@ -1,0 +1,31 @@
+.logout{
+    width: 100px;
+    height: 60px;
+    border-radius: 10px;
+    background-color:lightcoral;
+}
+.info{
+    padding-left: 40px;
+}
+.clear{
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+    background-color:lightcoral;
+}
+.translationList{
+    flex-grow: 1;
+    min-width: 200px;
+    margin: 20px;
+    margin-right: 40px;
+    margin-left: 40px;
+    overflow:hidden; 
+    overflow-y:scroll;
+    max-height: 220px;
+}
+.robot{
+    height: 150px;
+    object-fit: contain;
+    margin: 20px;
+    margin-bottom: 30px;
+}
