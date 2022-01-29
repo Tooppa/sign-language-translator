@@ -5,6 +5,7 @@ import Container from '../components/Container';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { updateTranslationsAction } from "../store/actions/loginActions";
+import { useDispatch } from 'react-redux';
 
 export default function TranslationPage() {
   const [text, setText] = useState("");
