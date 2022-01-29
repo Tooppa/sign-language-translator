@@ -5,6 +5,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+h1{
+  margin: 10px;
+}
 
 .line{
   background-color : #845EC2;
@@ -48,6 +51,7 @@ button{
   display: flex;
   flex-direction: row;
   justify-content: center;
+  flex-wrap: wrap;
 }
 .vertical{
   display: flex;

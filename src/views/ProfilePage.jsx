@@ -10,7 +10,7 @@ export default function ProfilePage() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  
+
   useEffect(() => {
     if (!session.isLoggedIn) {
       console.log('user not logged in redirecting back main');
@@ -26,8 +26,8 @@ export default function ProfilePage() {
         </li>
       });
     }
-    else{
-      return <li/>
+    else {
+      return <li />
     }
   }
 
@@ -35,19 +35,30 @@ export default function ProfilePage() {
     dispatch(sessionLogoutAction());
     navigate('/')
   }
+  const tranlations = () => {
+    navigate('/translation')
+  }
   const clearTranslations = () => {
 
   }
 
   return <>
     <div className="color-bg-yellow">
-      <div className="horizontal">
+      <div className="horizontal buttons">
         <img className='robot' src="./assets/Logo.png" alt="Hello" />
         <div className='vertical'>
-          <h1>Username: user</h1>
-          <button className='logout' onClick={logout}>
-            <h2>Logout</h2>
-          </button>
+          <div className='horizontal'>
+            <h1>Username: </h1>
+            <h1>{session.user.username}</h1>
+          </div>
+          <div className='horizontal'>
+            <button className='tranlations' onClick={tranlations}>
+              <h2>Translate</h2>
+            </button>
+            <button className='logout' onClick={logout}>
+              <h2>Logout</h2>
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -59,7 +70,7 @@ export default function ProfilePage() {
         </button>
       </div>
       <ul className='translationList'>
-        <Translations/>
+        <Translations />
       </ul>
     </Container>
   </>;
