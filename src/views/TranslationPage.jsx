@@ -1,9 +1,9 @@
-import "../styles/TranslationPage.css";
-import React, { useEffect, useState } from "react";
-import { translateToSignLanguage } from "../services/translationEngine.js";
-import { useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
+import '../styles/TranslationPage.css';
+import React, { useEffect, useState } from 'react';
+import { translateToSignLanguage } from '../services/translationEngine.js'
+import Container from '../components/Container';
+import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import { updateTranslationsAction } from "../store/actions/loginActions";
 
 export default function TranslationPage() {
@@ -32,37 +32,31 @@ export default function TranslationPage() {
   };
   const handleSubmit = async (evt) => {
     evt.preventDefault();
-
-    if (text !== undefined && text !== "") {
+    
+    if(text !== undefined && text !== "") {
       setTranslations(await translateToSignLanguage(text));
       dispatch(updateTranslationsAction(session.user, text));
     }
-  };
-  return (
-    <>
-      <div className="color-bg-yellow">
-        <form onSubmit={handleSubmit}>
-          <div className="translateField">
-            <input
-              type="text"
-              placeholder="Type here to translate"
-              value={text}
-              onChange={(e) => setText(e.target.value)}
-            />
-            <button className="color-bg-purple" type="submit">
-              -{">"}
-            </button>
-          </div>
-        </form>
-      </div>
-      <div className="textArea">
-        <div className="formBg">
-          <div className="text">
-            <Signs />
-          </div>
-          <div className="line" />
+    setTranslations(await translateToSignLanguage(text));
+  }
+  return <>
+    <div className="color-bg-yellow">
+      <form onSubmit={handleSubmit}>
+        <div className='translateField horizontal'>
+          <input
+            type="text"
+            placeholder='Type here to translate'
+            value={text}
+            onChange={e => setText(e.target.value)}
+          />
+          <button className='color-bg-purple' type='submit'>
+            <img id="arrow" src="./assets/arrow-icon-1177.png" alt="->" />
+          </button>
         </div>
-      </div>
-    </>
-  );
+      </form>
+    </div>
+    <Container>
+      <Signs/>
+    </Container>
+  </>;
 }

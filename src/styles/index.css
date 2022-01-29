@@ -5,6 +5,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+h1{
+  margin: 10px;
+}
 
 .line{
   background-color : #845EC2;
@@ -32,6 +35,30 @@ button{
   width: 50px;
   height: 50px;
   margin: 3px;
+  box-shadow: 0px 0px 5px black;
+  color: white;
+}
+#arrow{
+  height: 48px;
+  width: 55px;
+  margin: none;
+  padding: none;
+  position: relative;
+  right: 8px;
+}
+
+.horizontal{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.vertical{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 

@@ -1,0 +1,53 @@
+.logout{
+    width: 100px;
+    height: 60px;
+    margin-left: 10px;
+    margin-top: 10px;
+    border-radius: 10px;
+    background-color:lightcoral;
+}
+.tranlations{
+    width: 120px;
+    height: 60px;
+    margin-top: 10px;
+    border-radius: 10px;
+    background-color:seagreen;
+}
+.buttons{
+    padding-bottom: 20px;
+}
+.info{
+    padding-left: 40px;
+    margin-right: 30px;
+}
+.clear{
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+    background-color:lightcoral;
+}
+.translationList{
+    flex-grow: 1;
+    min-width: 200px;
+    margin: 20px;
+    margin-right: 40px;
+    overflow:hidden; 
+    overflow-y:scroll;
+    max-height: 220px;
+}
+.listItem{
+    border: 1px black solid;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px black;
+    margin: 10px;
+    padding: 10px;
+    font-size: large;
+    background-color : #845EC2;
+    color: white;
+}
+.robot{
+    height: 150px;
+    object-fit: contain;
+    margin: 20px;
+    margin-bottom: 30px;
+}
