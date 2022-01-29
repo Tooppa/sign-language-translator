@@ -1,9 +1,10 @@
 .translateField{
     padding: 5px;
     margin: 30px;
-    border: 1px solid black;
+    border: 2px solid #969696;
     border-radius: 60px;
     background-color: #EFEFEF;
+    box-shadow: 0px 0px 5px orange;
 }
 .signs{
     height: 80px;
