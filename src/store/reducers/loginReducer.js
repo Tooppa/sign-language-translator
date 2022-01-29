@@ -1,4 +1,4 @@
-import { ACTION_LOGIN_ATTEMPT, ACTION_LOGIN_SUCCESS } from "../actions/loginActions";
+import { ACTION_LOGIN_ATTEMPT, ACTION_LOGIN_SUCCESS, ACTION_UPDATE_TRASLATION } from "../actions/loginActions";
 
 export const loginReducer = (state = 0, action) => {
     switch (action.type) {
@@ -8,6 +8,9 @@ export const loginReducer = (state = 0, action) => {
             return {
               user: action.payload,
             };
+        
+        case ACTION_UPDATE_TRASLATION:
+            return action.payload;
         default:
             return state;
     }
