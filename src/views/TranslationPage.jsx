@@ -1,10 +1,23 @@
 import '../styles/TranslationPage.css';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { translateToSignLanguage } from '../services/translationEngine.js'
+import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 export default function TranslationPage() {
   const [text, setText] = useState('');
   const [translations, setTranslations] = useState([]);
+
+  const session = useSelector(state => state.session);
+
+  const navigate = useNavigate();
+  
+  useEffect(() => {
+    if (!session.isLoggedIn) {
+      console.log('user not logged in redirecting back main');
+      navigate('/');
+    }
+  }, []);
 
   const Signs = () => {
     return translations.map((t, index) => {
