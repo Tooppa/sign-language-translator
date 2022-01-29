@@ -24,7 +24,7 @@ export const getUser = async (username) => {
   try {
     const res = await fetch(`${baseUrl}/?username=${username}`);
     const json = await res.json();
-    return json;
+    return json[0];
   } catch (error) {
     console.error(error);
   }
@@ -38,8 +38,8 @@ export const getUser = async (username) => {
 export const createOrFindUser = async (username) => {
   try {
     const existingUser = await getUser(username);
-    if (existingUser.length > 0) {
-      return existingUser[0];
+    if (existingUser) {
+      return existingUser;
     }
     const res = await fetch(baseUrl, {
       method: "POST",
