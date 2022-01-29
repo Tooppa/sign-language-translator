@@ -10,12 +10,6 @@ form{
     background-color: #EFEFEF;
 
 }
-.formBg{
-    box-shadow: 4px 4px 10px;
-    border: 1px solid black;
-    border-radius: 10px;
-    background-color: white;
-}
 
 .logo{
     height: 200px;

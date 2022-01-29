@@ -5,21 +5,23 @@
     background-color:lightcoral;
 }
 .info{
-    width: 35%;
     padding-left: 40px;
 }
 .clear{
     width: 200px;
-    height: 60px;
+    height: auto;
     border-radius: 10px;
     background-color:lightcoral;
 }
 .translationList{
-    width: 45%;
+    flex-grow: 1;
+    min-width: 200px;
     margin: 20px;
+    margin-right: 40px;
+    margin-left: 40px;
     overflow:hidden; 
     overflow-y:scroll;
-    height: 70%;
+    max-height: 220px;
 }
 .robot{
     height: 150px;
