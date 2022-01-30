@@ -89,3 +89,29 @@ export const addTranslation = async (username, newTranslation) => {
     console.error(error);
   }
 };
+
+/**
+ * Updates the current users highscore
+ * @param {number} userId
+ * @param {number} newHighScore
+ * @returns Updated user
+ */
+export const clearTranslations = async (userId) => {
+  try {
+    const res = await fetch(`${baseUrl}/${userId}`, {
+      method: "PATCH",
+      headers: {
+        "X-API-Key": apiKey,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        translations: [],
+      }),
+    });
+    
+    const json = await res.json();
+    return json;
+  } catch (error) {
+    console.error(error);
+  }
+};
