@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { sessionLogoutAction } from '../store/actions/sessionActions';
 import Container from '../components/Container';
 import '../styles/ProfilePage.css';
+import { clearTranslationsAction } from '../store/actions/loginActions';
 
 export default function ProfilePage() {
   const session = useSelector((state) => state.session);
@@ -39,7 +40,7 @@ export default function ProfilePage() {
     navigate('/translation')
   }
   const clearTranslations = () => {
-
+    dispatch(clearTranslationsAction(session.user));
   }
 
   return <>
