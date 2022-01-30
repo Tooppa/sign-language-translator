@@ -1,5 +1,10 @@
-import { addTranslation, createOrFindUser } from "../../endpoints/users";
 import {
+  addTranslation,
+  clearTranslations,
+  createOrFindUser,
+} from "../../endpoints/users";
+import {
+  ACTION_CLEAR_TRASLATIONS,
   ACTION_LOGIN_ATTEMPT,
   ACTION_LOGIN_SUCCESS,
   ACTION_UPDATE_TRASLATION,
@@ -39,7 +44,21 @@ export const loginMiddleware =
     } else if (action.type === ACTION_LOGIN_SUCCESS) {
       dispatch(sessionSetAction(action.payload));
     } else if (action.type === ACTION_UPDATE_TRASLATION) {
-      addTranslation(action.payload.user.username, action.payload.newTranslation);
-      // console.log(await getUser(action.userId));
+      addTranslation(
+        action.payload.user.username,
+        action.payload.newTranslation
+      );
+      dispatch(
+        sessionSetAction({
+          username: action.payload.user.username,
+          translations: [
+            ...action.payload.user.translations,
+            action.payload.newTranslation,
+          ],
+        })
+      );
+    } else if (action.type === ACTION_CLEAR_TRASLATIONS) {
+      clearTranslations(action.payload.id);
+      dispatch(sessionSetAction(action.payload));
     }
   };
