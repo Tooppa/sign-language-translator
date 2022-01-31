@@ -38,6 +38,9 @@ button{
   box-shadow: 0px 0px 5px black;
   color: white;
 }
+button:hover{
+  box-shadow: 0px 0px 10px black;
+}
 #arrow{
   height: 48px;
   width: 55px;
