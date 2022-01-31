@@ -8,7 +8,7 @@ export default function Page404() {
     return <>
         <div className="color-bg-yellow horizontal">
             <div className="vertical extrapadding">
-                <h1>
+                <h1 className='heading'>
                     404 Page not found
                 </h1>
                 <div className="horizontal">

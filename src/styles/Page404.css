@@ -1,6 +1,6 @@
 #toHome{
     width: 200px;
-    height: 80px;
+    height: 90px;
     border-radius: 10px;
     background-color: seagreen;
     margin-bottom: 100px;
@@ -8,4 +8,5 @@
 }
 .extrapadding{
     margin-top: 100px;
+    color: white;
 }

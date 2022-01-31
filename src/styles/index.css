@@ -71,6 +71,7 @@ button:hover{
 /* Commonly used styles */
 .heading {
   font-family: 'Love Ya Like A Sister', cursive;
+  text-shadow: 0px 0px 2px black;
 }
 
 .text-color-white {
