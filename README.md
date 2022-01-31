@@ -1,70 +1,127 @@
-# Getting Started with Create React App
+<div id='top'></div>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+<h2 align="center">Lost in Translation</h2>
+  <p align="center">
+    English to sign language translation app made in React
+    <br />
+    <a href="https://super-sign-language-translator.herokuapp.com">View Demo</a>
+  </p>
+</div>
 
-## Available Scripts
+<!-- ABOUT THE PROJECT -->
 
-In the project directory, you can run:
+## About
 
-### `npm start`
+Group project made during Experis Academy Full-Stack Developer course. Courses are hosted by [Noroff](https://www.noroff.no/en/). Project members are listed on the <a href="#collaborators">collaborators</a> section.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Purpose of this assignement was to learn different aspects of React and Redux. Data is accessed via `Users API`, which is pre-made by Noroff.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+`Users API` is pre-made backend service made by Noroff, which is used to handle stored user data. 
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-### `npm run build`
+### Built With
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- [JavaScript](https://javascript.com/)
+- [React](https://reactjs.org)
+- [Redux](https://redux.js.org)
+- [Noroff Assignment API](https://github.com/dewald-els/noroff-assignment-api/blob/master/docs/lost-in-translation.md)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+<!-- GETTING STARTED -->
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Getting Started
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Prerequisites
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Have npm installed. npm comes pre installed with NodeJs, Please go [here](https://nodejs.org/en/download/) to download it. 
+- Follow [create-react-app](https://reactjs.org/docs/create-a-new-react-app.html) guide on how to get started with react
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+### Installation
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+API hosting portion uses [Heroku](https://heroku.com), but your may use hosting provider 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Generate random base64 string. This is your API key, save it for later. 
 
-### Code Splitting
+2. Clone the repo
+   ```sh
+   git clone https://github.com/Tooppa/sign-language-translator.git
+   ```
+3. Install NPM packages
+   ```sh
+   npm install
+   ```
+4. Create `.env.local` file on your project root directory.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+5. Paste the following text to the create file:
+   ```
+    VUE_APP_USERS_API_KEY={your-api-key}
+    REACT_APP_USERS_BASE_URL={base-url-to-your-hosted-api}/translations
+   ```
+6. Deploy backend api. Follow this [repository](https://github.com/dewald-els/noroff-assignment-api) for guidance
+7. Your generated base64 string is your `API_KEY`. Add it as your Config Vars on [Heroku Dashboard](https://dashboard.heroku.com) 
+8. Add your generated API key string to `REACT_APP_USERS_API_KEY` section of your `.env.local` file
+9. Run the app locally with:
+```
+npm start
+```
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+<!-- USAGE EXAMPLES -->
+## Usage
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Firstly the app asks you to input your name. This name can be used later to 'log-in' to your previous account. 
 
-### Deployment
+If you have already logged in previously, You are redirected immidiately to the translation page.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+![screenshot-login]
 
-### `npm run build` fails to minify
+After you have entered your name, you are presented with an empty translation page. On top you can enter word or sentence you wish to have translated. After doing so, pressing Enter or arrow button to start translating. App populates the white box below to indicate the translated input.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![screenshot-translation]
+
+You can access your Profile page from the button top right, where it says 'Profile'. On your Profile page you can see all of your previous translations. You may also delete all of your previously made translations by pressing the 'Clean translations' button. 
+
+On the top of the page, you can also see our username, quick link back to the translation page and logout button. Upon loggin out, if you wish to access your account again, you may do so by entering the same username that you chose in the beginning.
+
+![screenshot-profile]
+
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+<!-- CONTACT -->
+## Collaborators
+
+<div id='collaborators'></div>
+
+Tomas Valkendorff
+[![LinkedIn][linkedin-shield]][linkedin-url-tomas] [![GitHub][github-badge]][github-url-tomas]
+
+Mikko Ryynänen
+[![LinkedIn][linkedin-shield]][linkedin-url-mikko] [![GitHub][github-badge]][github-url-mikko]
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+<!-- MARKDOWN LINKS & IMAGES -->
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[github-badge]: https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white
+[linkedin-url-tomas]: https://www.linkedin.com/in/tomasvalkendorff/
+[linkedin-url-mikko]: https://www.linkedin.com/in/mikko-ryynanen
+[github-url-tomas]: https://github.com/Tooppa
+[github-url-mikko]: https://github.com/mikkoryynanen
+[screenshot-login]: screenshots/screenshot-login.png
+[screenshot-profile]: screenshots/screenshot-profile.png
+[screenshot-translation]: screenshots/screenshot-translation.png
