@@ -21,6 +21,9 @@
 }
 @media only screen and (max-width: 530px) {
     .text{
-        width: 95%;
+        width: 90vw;
+    }
+    .textArea{
+        padding: 60px 10px 0px 10px;
     }
 }

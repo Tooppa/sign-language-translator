@@ -1,0 +1,11 @@
+#toHome{
+    width: 200px;
+    height: 80px;
+    border-radius: 10px;
+    background-color: seagreen;
+    margin-bottom: 100px;
+    margin-top: 50px;
+}
+.extrapadding{
+    margin-top: 100px;
+}
