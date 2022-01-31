@@ -29,6 +29,7 @@ Purpose of this assignement was to learn different aspects of React and Redux. D
 - [JavaScript](https://javascript.com/)
 - [React](https://reactjs.org)
 - [Redux](https://redux.js.org)
+- [React Router DOM](https://reactrouter.com/)
 - [Noroff Assignment API](https://github.com/dewald-els/noroff-assignment-api/blob/master/docs/lost-in-translation.md)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
