@@ -13,13 +13,13 @@ export default function Header() {
   if (!login.isLoggedIn)
     return (
       <nav>
-        <h3>Lost in translation</h3>
+        <h3 className="heading text-color-white">Lost in translation</h3>
       </nav>
     );
   else {
     return (
       <nav>
-        <h3>Lost in translation</h3>
+        <h3 className="heading text-color-white">Lost in translation</h3>
         <button onClick={profile}>
           <p>Profile</p>
         </button>
