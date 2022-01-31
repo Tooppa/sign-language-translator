@@ -19,7 +19,7 @@ export default function HomePage() {
 
   useEffect(() => {
     dispatch(sessionInitAction());
-  });
+  },[dispatch]);
 
   useEffect(() => {
     if (login.isLoggedIn) {

@@ -20,7 +20,7 @@ export default function TranslationPage() {
     if (!login.isLoggedIn) {
       navigate("/");
     }
-  });
+  }, [login, navigate]);
 
   const Signs = () => {
     return translations.map((t, index) => {
