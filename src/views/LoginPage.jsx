@@ -7,7 +7,7 @@ import { sessionInitAction } from "../store/actions/sessionActions";
 import "../styles/LoginPage.css";
 
 export default function HomePage() {
-  const session = useSelector((state) => state.session);
+  const login = useSelector(state => state.login);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -19,20 +19,20 @@ export default function HomePage() {
 
   useEffect(() => {
     dispatch(sessionInitAction());
-  }, []);
+  },[dispatch]);
 
   useEffect(() => {
-    if (session.isLoggedIn) {
+    if (login.isLoggedIn) {
       navigate("/translation");
     }
-  }, [session]);
+  }, [login, navigate]);
 
   return (
     <div className="color-bg-yellow">
       <div className="horizontal">
         <img className="logo" src="./assets/Logo-Hello.png" alt="Hello" />
         <div className="vertical">
-          <h1>Lost in translation</h1>
+          <h1 className="heading text-color-white" style={{fontSize: '42px'}}>Lost in translation</h1>
           <h2>Get started by signing in with a username</h2>
         </div>
       </div>

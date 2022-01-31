@@ -1,24 +1,26 @@
-import { ACTION_CLEAR_TRASLATIONS, ACTION_LOGIN_ATTEMPT, ACTION_LOGIN_SUCCESS, ACTION_UPDATE_TRASLATION } from "../actions/loginActions";
+import { ACTION_LOGIN_ATTEMPT, ACTION_LOGIN_ERROR, ACTION_LOGIN_SUCCESS, ACTION_LOGOUT } from "../actions/loginActions";
 
-export const loginReducer = (state = 0, action) => {
+const initalState = {
+  isLoggedIn: false,
+  error: ''
+}
+
+export const loginReducer = (state = {...initalState}, action) => {
     switch (action.type) {
       case ACTION_LOGIN_ATTEMPT:
         return state;
       case ACTION_LOGIN_SUCCESS:
         return {
-          user: action.payload,
+          isLoggedIn: true,
+          error: "",
         };
-
-      case ACTION_UPDATE_TRASLATION:
+      case ACTION_LOGOUT:
+        return initalState;
+      case ACTION_LOGIN_ERROR:
         return {
-          user: {
-            ...action.payload.user,
-            translations: [...action.payload.user.translations, action.payload.newTranslation]
-          }
+          ...initalState,
+          error: 'Login failed'
         }
-        
-        case ACTION_CLEAR_TRASLATIONS:
-        return action.payload;
       default:
         return state;
     }

@@ -1,8 +1,11 @@
-body {
-  margin: 0;
-  font-family: 'Sanchez', serif;
+* {
+    font-family: 'Sanchez', serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
 }
 
 h1{
@@ -68,6 +71,10 @@ button:hover{
 /* Commonly used styles */
 .heading {
   font-family: 'Love Ya Like A Sister', cursive;
+}
+
+.text-color-white {
+  color: white;
 }
 
 .color-bg-yellow {

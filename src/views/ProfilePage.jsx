@@ -1,23 +1,25 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from "react-router-dom";
-import { sessionLogoutAction } from '../store/actions/sessionActions';
+import {
+  sessionLogoutAction,
+  clearTranslationsAction,
+} from "../store/actions/sessionActions";
 import Container from '../components/Container';
 import '../styles/ProfilePage.css';
-import { clearTranslationsAction } from '../store/actions/loginActions';
 
 export default function ProfilePage() {
   const session = useSelector((state) => state.session);
+  const login = useSelector(state => state.login);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
 
   useEffect(() => {
-    if (!session.isLoggedIn) {
-      console.log('user not logged in redirecting back main');
+    if (!login.isLoggedIn) {
       navigate('/');
     }
-  }, []);
+  }, [login, navigate]);
 
   const Translations = () => {
     if (session.user.translations) {
@@ -34,13 +36,14 @@ export default function ProfilePage() {
 
   const logout = () => {
     dispatch(sessionLogoutAction());
-    navigate('/')
   }
   const tranlations = () => {
-    navigate('/translation')
+    navigate('/translation');
   }
   const clearTranslations = () => {
-    dispatch(clearTranslationsAction(session.user));
+    if (session.user.translations.length > 0) {
+      dispatch(clearTranslationsAction(session.user));
+    }
   }
 
   return <>

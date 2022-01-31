@@ -1,13 +1,7 @@
+import { createOrFindUser } from "../../endpoints/users";
 import {
-  addTranslation,
-  clearTranslations,
-  createOrFindUser,
-} from "../../endpoints/users";
-import {
-  ACTION_CLEAR_TRASLATIONS,
   ACTION_LOGIN_ATTEMPT,
   ACTION_LOGIN_SUCCESS,
-  ACTION_UPDATE_TRASLATION,
   loginErrorAction,
   loginSuccessAction,
 } from "../actions/loginActions";
@@ -34,31 +28,14 @@ export const loginMiddleware =
           // Always the take first index from found users
           // Backend returns all users matching the username variable EXACTLY.
           // This shouldn't be an issue since only one user per username is allowed
-          dispatch(loginSuccessAction(foundUser));
+          dispatch(loginSuccessAction());
+          dispatch(sessionSetAction(foundUser));
         } else {
           console.error(`User not found with ${action.payload}`);
         }
       } catch (error) {
         dispatch(loginErrorAction(error));
+        console.error(error);
       }
-    } else if (action.type === ACTION_LOGIN_SUCCESS) {
-      dispatch(sessionSetAction(action.payload));
-    } else if (action.type === ACTION_UPDATE_TRASLATION) {
-      addTranslation(
-        action.payload.user.username,
-        action.payload.newTranslation
-      );
-      dispatch(
-        sessionSetAction({
-          username: action.payload.user.username,
-          translations: [
-            ...action.payload.user.translations,
-            action.payload.newTranslation,
-          ],
-        })
-      );
-    } else if (action.type === ACTION_CLEAR_TRASLATIONS) {
-      clearTranslations(action.payload.id);
-      dispatch(sessionSetAction(action.payload));
     }
   };
