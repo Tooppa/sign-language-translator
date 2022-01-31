@@ -9,6 +9,7 @@ import {
 import TranslationPage from './views/TranslationPage';
 import ProfilePage from "./views/ProfilePage";
 import HomePage from "./views/LoginPage";
+import Page404 from "./views/Page404";
 import Header from "./components/Header"
 
 export default function App() {
@@ -23,6 +24,7 @@ export default function App() {
           <Route path="/translation" element={<TranslationPage />} />
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/" element={<HomePage />} />
+          <Route component={<Page404/>} />
         </Routes>
       </div>
     </Router>
