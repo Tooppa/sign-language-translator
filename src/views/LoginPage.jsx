@@ -32,7 +32,7 @@ export default function HomePage() {
       <div className="horizontal">
         <img className="logo" src="./assets/Logo-Hello.png" alt="Hello" />
         <div className="vertical">
-          <h1>Lost in translation</h1>
+          <h1 className="heading text-color-white" style={{fontSize: '42px'}}>Lost in translation</h1>
           <h2>Get started by signing in with a username</h2>
         </div>
       </div>
