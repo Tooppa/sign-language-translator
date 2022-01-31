@@ -4,7 +4,7 @@ import { translateToSignLanguage } from '../services/translationEngine.js'
 import Container from '../components/Container';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { updateTranslationsAction } from "../store/actions/loginActions";
+import { updateTranslationsAction } from "../store/actions/sessionActions";
 import { useDispatch } from 'react-redux';
 
 export default function TranslationPage() {
@@ -13,14 +13,14 @@ export default function TranslationPage() {
 
   const dispatch = useDispatch();
   const session = useSelector((state) => state.session);
+  const login = useSelector((state) => state.login);
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!session.isLoggedIn) {
-      console.log("user not logged in redirecting back to main");
+    if (!login.isLoggedIn) {
       navigate("/");
     }
-  }, []);
+  });
 
   const Signs = () => {
     return translations.map((t, index) => {
@@ -34,7 +34,7 @@ export default function TranslationPage() {
   const handleSubmit = async (evt) => {
     evt.preventDefault();
     
-    if(text !== undefined && text !== "") {
+    if (text !== undefined && text !== "") {
       setTranslations(await translateToSignLanguage(text));
       dispatch(updateTranslationsAction(session.user, text));
     }

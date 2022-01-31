@@ -7,7 +7,7 @@ import { sessionInitAction } from "../store/actions/sessionActions";
 import "../styles/LoginPage.css";
 
 export default function HomePage() {
-  const session = useSelector((state) => state.session);
+  const login = useSelector(state => state.login);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -19,13 +19,13 @@ export default function HomePage() {
 
   useEffect(() => {
     dispatch(sessionInitAction());
-  }, []);
+  });
 
   useEffect(() => {
-    if (session.isLoggedIn) {
+    if (login.isLoggedIn) {
       navigate("/translation");
     }
-  }, [session]);
+  }, [login, navigate]);
 
   return (
     <div className="color-bg-yellow">
