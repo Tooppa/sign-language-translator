@@ -24,7 +24,7 @@ export default function App() {
           <Route path="/translation" element={<TranslationPage />} />
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/" element={<HomePage />} />
-          <Route component={<Page404/>} />
+          <Route path="*" element={<Page404/>} />
         </Routes>
       </div>
     </Router>
